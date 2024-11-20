@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+<div class="header">
+  <h2 class="gradient-text">Call me maybe?</h2>
+  <h3 class="gradient-text2">or not...</h3>
+</div>
+
+<div id="navbar">
+  <a href="home.html">Acasa</a>
+  <a href="cv.html">CV</a>
+  <a class="active" href="contact.html">Contact</a>
+</div>
+
+<body>        
+
+    <h3 class="gradient-text3">Aici imi lasi gen un mesaj daca cumva iti e prea rusine sa ma suni ^^ </h3>
+    <div class="container">
+      <form action="mailto:manoleandreea2003@icloud.com" method="post" enctype="text/plain">
+        <label class="gradient-text3" for="fname" style="color:#000000">Prenume</label>
+          <input type="text" id="fname" name="firstname" placeholder="Aici introduci prenumele...">      
+        <label class="gradient-text3" for="lname" style="color:#000000">Nume</label>
+          <input type="text" id="lname" name="lastname" placeholder="Si aici numele...">
+        <label class="gradient-text3" for="country" style="color:#000000">Tara</label>
+          <select id="country" name="country">
+            <option value="australia">Romania</option>
+            <option value="canada">Rosu-Albastru</option>
+            <option value="usa">Cainii</option>
+          </select>
+        <label class="gradient-text3"for="subject" style="color:#000000">Subiect</label>
+          <textarea id="subject" name="subject" placeholder="Aici scrii ce ai de spus..." style="height:200px"></textarea>
+            <input type="submit" style="color:black;""Submit">
+      </form>
+    </div>
+    <br>
+
+    <div class="w3-container w3-card w3-white w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom">
+      <h3 class="gradient-text3">Unde se afla facultatea la care sunt eu studenta? Uite aici! Daca vrei sa ma vezi face to face iti sugerez sa iti arunci privirea mai jos..</h3>
+      <div id="map"></div>
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+      <script>
+        const map = L.map('map').setView([44.43632887478283, 26.04804617803268], 16); 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '© OpenStreetMap'
+        }).addTo(map);
+        const marker = L.marker([44.43632887478283, 26.04804617803268]).addTo(map)
+          .bindPopup('Aici imi petrec majoritatea timpului!')
+          .openPopup();
+      </script>
+    </div>
+
+        
+</body>
+        
+<footer class="w3-container w3-amber w3-center w3-margin-top">
+
+  <p>&copy; 2024 Manole. Toate drepturile rezervate.</p>
+
+</footer>
+
+</html>
